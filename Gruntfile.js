@@ -65,12 +65,17 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true,
                 }
+            },
+            templates: {
+                files: ['./*.hbs', './partials/**/*.hbs'],
+                options: {
+                    livereload: true,
+                }
             }
         },
 
         bowercopy: {
             options: {
-
             },
             modernizr: {
                 files: {
