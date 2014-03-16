@@ -1,0 +1,528 @@
+/******************************************************************
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	font-family: $default-font;
+    font-weight: 400;
+	font-size: 100%;
+	line-height: 1.5;
+    background-color: $bg-color;
+    background-image: url(../images/bodybg.jpg);
+	color: $font-color;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: $link-color;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover-color;
+	}
+
+	/* on click */
+	&:active {
+        color: $link-hover-color;
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: $header-font;
+	text-rendering: optimizelegibility;
+	font-weight: 400;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-size: 2.5em;
+	line-height: 1.333em;
+}
+
+h2, .h2 {
+	font-size: 1.75em;
+	line-height: 1.4em;
+	margin-bottom: 0.375em;
+}
+
+h3, .h3 {
+	font-size: 1.125em;
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+	//font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0 0 1em;
+}
+
+/*********************
+IMAGES
+**********************/
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+    margin-top: 24px;
+}
+
+#inner-header {
+    background-color: $header-color;
+    border: 0.063rem solid $border-color;
+    text-align: center;
+    border-radius: 25px 25px 0 0;
+}
+
+#cover {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 25px 25px 0 0;
+
+    img {
+        //height: 100%;
+        //max-width: 100%;
+        //border-radius: 25px 25px 0 0;
+        margin-top: -100px;
+
+        max-width: none;
+        //max-height: 100%;
+        //border-radius: 150px;
+    }
+}
+
+#logo {
+
+    img {
+        max-height: 100px;
+        max-width: 100px;
+    }
+}
+
+#site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+#site-description {
+
+}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/* The {{nav}} helper outputs a site-navigation div */
+
+#site-navigation {
+	border: 1px solid #ccc;
+	border-bottom: 0;
+
+    ul {
+      margin : 0;
+    }
+
+	li {
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 10px 10px;
+			background-color: #eee;
+			border-bottom: 1px solid #ccc;
+
+			/*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+			&:hover, &:focus {
+
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+	} /* end .menu li */
+
+} /* end .nav */
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	margin-top: 2.2em;
+}
+
+.hentry {
+    background: white;
+    border: 0.063rem solid $border-color;
+    padding: 0 2em 1em;
+    margin: 0 0 1em;
+
+    .article-header {
+
+        h1 {
+            background-color: $article-header-color;
+            background-image: url(../images/posttitlebg.jpg);
+            border: 0.063rem solid $article-header-border-color;
+            color: white;
+            padding: 0.8rem 0rem;
+            text-align: center;
+
+            a, a:link, a:visted {
+                color: white;
+            }
+            
+            a, a:hover, a:focus {
+                color: $header-link-color;
+            }
+        }
+    }
+
+    footer {}
+
+} /* end .hentry */
+
+.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+/* post meta */
+.byline {
+    color: #999;
+    time {}
+}
+
+/* Article entry content */
+.entry-content {
+
+    p {}
+
+    ul, ol, table, dl {}
+
+    ul, ol {
+        li {}
+    }
+
+    ul {
+        li {}
+    }
+
+    ol {
+        li {}
+    }
+
+    blockquote {
+        &:before {}
+    }
+
+    dl {}
+    dt {}
+    dd {
+        margin-left: 0;
+        font-size: 0.9em;
+        color: #787878;
+        margin-bottom: 1.5em;
+    }
+
+    img {
+        margin: 0 0 1.5em 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    video, object {
+        max-width: 100%;
+        height: auto;
+    }
+
+    pre {
+        background: #eee;
+        border: 1px solid #cecece;
+        padding: 10px;
+    }
+
+} /* end .entry-content */
+
+.img-caption {
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+
+    /* images inside img-caption */
+    img {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    p.img-caption-text {
+        font-size: 0.85em;
+        margin: 4px 0 7px;
+        text-align: center;
+    }
+
+} /* end .img-caption */
+
+/* Add a comma after tags, unless it is the last one */
+.tag-label:after {
+    content: ",";
+}
+
+.tag-label:last-child:after {
+    content: "";
+}
+
+/******************************************************************
+PAGINATION (Thanks to the Ghost team for this)
+******************************************************************/
+
+/* The main wrapper for our pagination links */
+.pagination {
+  position: relative;
+  width: 80%;
+  margin: 4rem auto;
+  font-size: 1.3rem;
+  text-align: center;
+
+  a {}
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.older-posts {
+  right: 0;
+}
+
+.page-number {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.newer-posts {
+  left: 0;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {}
+
+.widgettitle {}
+
+.widget {
+
+    img {
+        max-width: 100%;
+    }
+
+    ul {
+
+        li {
+            &:first-child {}
+            &:last-child {}
+
+            a {
+                font-size: 1.2em;
+                text-decoration: none;
+            }
+        }
+
+    }
+
+} /* end .widget */
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*all footers*/
+footer {
+
+    ul {
+        display: block;
+
+        li {
+            display: inline-block;
+            margin: 10 12 0 12;
+
+            a {
+                font-size: 3em;
+                text-decoration: none; 
+            }
+        }
+    }
+} /* end footer */
+
+.list-post-footer {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    vertical-align: baseline;
+
+    ul {
+        display: inline-block;
+        margin: 0;
+        list-style: none;
+        list-style-image: none;
+    
+        li {
+            display: inline-block;
+            margin: 0;
+            
+            a, i {
+                display: block;
+                text-decoration: none;
+                padding: 0px .6rem;
+                background-color: #eee;
+                font-size: 1.5rem;
+                line-height: 1;
+            }
+        }
+    }
+
+    p {
+        display: inline-block;
+        padding: 0 0 0 .4em;
+        margin-bottom: 0;
+
+        i {
+            padding: 0 .4em 0 0;
+        }
+    }
+}
+
+.article-footer {
+    border-top: #ccc 1px solid;
+
+    .author-post {
+        
+        div {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .author-image {
+            width: 150px; 
+            height: 150px;
+            overflow: hidden;
+            border-radius: 75px; 
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            img {
+                max-width: none;
+                max-height: 100%;
+                //border-radius: 150px;
+            }
+        }
+    }
+
+    .share-post {
+    }
+}
+
+/* page footer */
+.footer {
+	clear: both;
+    background: $footer-color;
+    color: $footer-text-color;
+    margin: 2rem auto 0;
+
+    #inner-footer {
+        padding: 3rem 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a, a:visited {
+        color: $footer-link-color;
+
+        /* on hover */
+        &:hover, &:focus {
+            color: $footer-link-hover;
+        }
+    }
+} /* end .footer */
+
+.copyright {}

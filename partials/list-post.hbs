@@ -1,0 +1,50 @@
+{{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
+<article class="post hentry {{post_class}}">
+
+    <header class="h2 entry-title">
+        <a href="/{{slug}}" rel="bookmark">{{title}}</a>
+    </header>
+
+    <time class="updated" datetime="2012-05-03">
+        {{date published_at format="MMMM DD, YYYY"}}
+    </time>
+
+    <section class="entry-content clearfix">
+        <p>{{excerpt}}...</p>
+        <a href="/{{slug}}" class="read-more button">Read More</a>
+    </section>
+
+    <div class="list-post-footer clearfix">
+
+	    <ul>
+	        <li><a href="#" class="symbol">&#xe227</a>
+	        </li><li><a href="#" class="symbol">&#xe286</a>
+	        </li><li><a href="#" class="symbol">&#xe239</a>
+	        </li><li><a href="#" class="fa fa-twitter"></a>
+	        </li><li><a href="#" class="fa fa-facebook"></a>
+	        </li><li><a href="#" class="fa fa-google-plus"></a>
+	        </li><li><a href="#" class="fa fa-pinterest"></a>
+	        </li>
+	    </ul>
+
+		{{#if tags}}
+			<p>
+	            <i class="fa fa-tags"></i>
+
+	            {{#each tags}}
+	                <!-- Tag Links are not quite ready yet.
+	                       <a href="/tags/{{this.name}}"
+	                       class="tag-label"
+	                       title="View all posts in {{this.name}}"
+	                       rel="category">{{this.name}}</a>
+	                       -->
+	                {{! Use the span below to display tags as plain text until tag links are ready }}
+	                <span class="tag-label">{{this.name}}</span>
+	            {{/each}}
+            </p>
+
+        {{/if}}
+
+	</div>
+
+</article> <!-- end list article  -->

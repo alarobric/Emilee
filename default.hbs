@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{settings.title}}</title>
+
+    <meta name="description" content="{{@blog.description}}">
+
+    <!-- mobile meta -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Announce the rss feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="/rss">
+
+    <!-- Add Modernizr for better IE8 Support -->
+    <script type="text/javascript" src="/js/libs/modernizr.custom.min.js"></script>
+
+    <!-- Include the fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Life+Savers|Open+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Include the main stylesheet-->
+    <link rel="stylesheet" id="linen-stylesheet-css" href="/css/style.css" type="text/css" media="all">
+
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='linen-ie-only-css'  href='/css/ie.css' type='text/css' media='all' />
+    <![endif]-->
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" id="custom-stylesheet-css" href="/css/custom.css" type="text/css" media="all">
+</head>
+
+
+<body class="{{body_class}}">
+
+    <div id="container">
+
+        {{! Output the content of the header partial template }}
+        {{> header}}
+
+        <section id="content">
+
+            {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
+            <div id="inner-content" class="wrap clearfix">
+
+                {{! The main section uses eight columns in the grid framework }}
+                <main id="main" class="eightcol first clearfix" role="main">
+                    {{{body}}}
+                </main> <!-- end #main -->
+
+                {{! The sidebar fills in the remaining four columns }}
+                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
+                    {{> sidebar}}
+                </aside>
+
+            </div> <!-- end #inner-content -->
+
+        </section> <!-- end #content -->
+
+        {{! Output the content of the footer partial template }}
+        {{> footer }}
+
+    </div> <!-- end #container -->
+
+    <!-- The Ghost footer helper will insert some shared javascript libraries and files required by plugins -->
+    {{ghost_foot}}
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+</body>
+</html>
