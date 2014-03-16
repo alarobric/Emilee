@@ -1,6 +1,6 @@
 <header class="header" role="banner">
 
-    <div id="inner-header" class="wrap clearfix">
+    <div id="inner-header" class="clearfix">
 
         {{#if @blog.cover}}
             <!-- Cover Image -->
@@ -8,27 +8,25 @@
                 <img src="{{@blog.cover}}" alt="">
             </div>
         {{/if}}
-
-        {{!
-        {{#if @blog.logo}}{{!
+ 
+        {{#if @blog.logo}}
             <!-- Logo -->
             <div id="logo" class="logo-container">
-                <a href="/"><img src="{{@blog.logo}}{{!" alt="Logo"></a>
+                <a href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
             </div>
         {{/if}}
-        
 
         <!-- Title -->
         <h1 id="site-title" class="h1">
-            <a href="/" rel="nofollow">{{@blog.title}}</a>
+            <a href="/" rel="nofollow">{{!@blog.title}}{{meta_title}}</a>
         </h1>
 
         <!-- Blog Description -->
         <p id="site-description">
-            {{@blog.description}}
+            {{!@blog.description}}{{meta_description}}
         </p>
 
-        <!-- Static Menu (Dynamic menu not yet available in Ghost 0.3) -->
+        <!-- Static Menu (Dynamic menu not yet available in Ghost 0.4) -->
         {{> navigation}}
 
     </div> <!-- end #inner-header -->

@@ -10,7 +10,6 @@ and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
 
-
 //
 // IMPORTING STYLES
 //
@@ -47,6 +46,10 @@ tweeners.
 
 } // end of media query
 
+@media only screen and (min-width: 660px) {
+	@import "660up";
+}
+
 /*
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -62,6 +65,10 @@ you can add resource intensive styles.
 	@import "768up";
 
 } // end of media query
+
+@media only screen and (min-width : 940px) {
+	@import "940up";
+}
 
 /*
 DESKTOP

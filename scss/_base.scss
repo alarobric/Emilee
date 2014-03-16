@@ -24,15 +24,6 @@ body {
 }
 
 /*********************
-LAYOUT & GRID STYLES
-*********************/
-
-.wrap {
-	width: 96%;
-	margin: 0 auto;
-}
-
-/*********************
 LINK STYLES
 *********************/
 
@@ -120,6 +111,7 @@ img {
     max-width: 100%;
 }
 
+
 /*********************
 HEADER STYLES
 *********************/
@@ -130,7 +122,7 @@ HEADER STYLES
 
 #inner-header {
     background-color: $header-color;
-    border: 0.063rem solid $border-color;
+    //border: 0.063rem solid $border-color;
     text-align: center;
     border-radius: 25px 25px 0 0;
 }
@@ -154,6 +146,7 @@ HEADER STYLES
 }
 
 #logo {
+    float: left; 
 
     img {
         max-height: 100px;
@@ -218,10 +211,28 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 
-#content {
+.content {
 	margin-top: 2.2em;
 }
 
+.galleryItem {
+    color: #797476;
+    float: left;
+
+    width: 96%;
+    margin: 2% 2% 50px 2%;
+    
+    .h2 {
+        text-transform: uppercase;
+    }
+    
+    img {
+        max-width: 100%;
+        @include border-radius(5px);
+    }
+}
+
+/*
 .hentry {
     background: white;
     border: 0.063rem solid $border-color;

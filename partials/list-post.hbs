@@ -1,5 +1,7 @@
 {{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
-<article class="post hentry {{post_class}}">
+<article class="galleryItem hentry {{post_class}}">
+
+    <a href="/{{slug}}" rel="bookmark">{{content words="0"}}</a>
 
     <header class="h2 entry-title">
         <a href="/{{slug}}" rel="bookmark">{{title}}</a>
@@ -14,20 +16,8 @@
         <a href="/{{slug}}" class="read-more button">Read More</a>
     </section>
 
-    <div class="list-post-footer clearfix">
-
-	    <ul>
-	        <li><a href="#" class="symbol">&#xe227</a>
-	        </li><li><a href="#" class="symbol">&#xe286</a>
-	        </li><li><a href="#" class="symbol">&#xe239</a>
-	        </li><li><a href="#" class="fa fa-twitter"></a>
-	        </li><li><a href="#" class="fa fa-facebook"></a>
-	        </li><li><a href="#" class="fa fa-google-plus"></a>
-	        </li><li><a href="#" class="fa fa-pinterest"></a>
-	        </li>
-	    </ul>
-
-		{{#if tags}}
+    {{#if tags}}
+    	<div class="list-post-footer clearfix">		
 			<p>
 	            <i class="fa fa-tags"></i>
 
@@ -42,9 +32,7 @@
 	                <span class="tag-label">{{this.name}}</span>
 	            {{/each}}
             </p>
-
-        {{/if}}
-
-	</div>
+		</div>
+	{{/if}}
 
 </article> <!-- end list article  -->

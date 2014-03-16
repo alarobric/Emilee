@@ -40,37 +40,34 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
-
-    <!-- Include custom CSS -->
-    <link rel="stylesheet" id="custom-stylesheet-css" href="/css/custom.css" type="text/css" media="all">
 </head>
 
 
 <body class="{{body_class}}">
 
-    <div id="container">
+    <div class="container wrap">
 
         {{! Output the content of the header partial template }}
         {{> header}}
 
-        <section id="content">
+        <div class="content">
 
             {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
-            <div id="inner-content" class="wrap clearfix">
+            <div class="inner-content clearfix">
 
                 {{! The main section uses eight columns in the grid framework }}
-                <main id="main" class="eightcol first clearfix" role="main">
+                <main id="main" class="clearfix" role="main">
                     {{{body}}}
                 </main> <!-- end #main -->
 
                 {{! The sidebar fills in the remaining four columns }}
-                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
+                <aside id="sidebar-main" class="sidebar clearfix" role="complementary">
                     {{> sidebar}}
                 </aside>
 
             </div> <!-- end #inner-content -->
 
-        </section> <!-- end #content -->
+        </div> <!-- end #content -->
 
         {{! Output the content of the footer partial template }}
         {{> footer }}
