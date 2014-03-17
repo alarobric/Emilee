@@ -67,6 +67,17 @@ jQuery(document).ready(function($) {
 
     // add all your scripts here
 
+    
+    //look for an image for the post
+    mainImage = $('img[alt="main-image"]');
+    isPost = $('.cover-container.post');
+    
+    if ( mainImage.length > 0 && isPost.length > 0 ){
+        mainImageSource = mainImage.attr('src');
+        $('#cover').css('background-image','url('+mainImageSource+')');
+        mainImage.remove();
+    }
+
 
 }); /* end of as page load scripts */
 

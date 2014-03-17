@@ -52,8 +52,14 @@ http://0to255.com/
 Also: http://sachagreif.com/sass-color-variables/
 *********************/
 
-$black:             #212121;
-$white:             #efefef;
+$black:             	#212121;
+$white:             	#efefef;
+$gray:					#929aa0;
+$gray-hover:			darken($gray, 40%);
+$nav-background:		#f2f2f2;
+$nav-item-background:	darken($nav-background, 5%);
+$nav-hover-background:	darken($nav-background, 10%);
+$nav-background-border:	darken($nav-background, 20%);
 
 $body-text:         #565656;
 
@@ -163,7 +169,7 @@ BUTTONS
 *********************/
 
 .button, .button:visited {
-	font-family: $header-font;
+	font-family: $font-header;
 	border: 1px solid darken($link-color, 13%);
 	border-top-color: darken($link-color, 7%);
 	border-left-color: darken($link-color, 7%);

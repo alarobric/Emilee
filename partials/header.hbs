@@ -2,33 +2,69 @@
 
     <div id="inner-header" class="clearfix">
 
-        {{#if @blog.cover}}
-            <!-- Cover Image -->
-            <div id="cover" class="cover-container">
-                <img src="{{@blog.cover}}" alt="">
-            </div>
-        {{/if}}
- 
-        {{#if @blog.logo}}
-            <!-- Logo -->
-            <div id="logo" class="logo-container">
-                <a href="/"><img src="{{@blog.logo}}" alt="Logo"></a>
-            </div>
-        {{/if}}
+        <!-- Logo -->
+        <a href="/">
+            {{#if @blog.logo}}
+                <img src="{{@blog.logo}}" alt="Logo" class="logo">
+            {{else}}
+                <img src="{{asset "images/ghost-icon.png"}}" alt="Logo" class="logo">
+            {{/if}}
+        </a>
 
         <!-- Title -->
-        <h1 id="site-title" class="h1">
+        <h2 id="site-title">
             <a href="/" rel="nofollow">{{!@blog.title}}{{meta_title}}</a>
-        </h1>
+        </h2>
 
-        <!-- Blog Description -->
-        <p id="site-description">
-            {{!@blog.description}}{{meta_description}}
-        </p>
-
-        <!-- Static Menu (Dynamic menu not yet available in Ghost 0.4) -->
-        {{> navigation}}
+        <section class="social-media">
+            <a href="index.html#">
+                <i class="fa fa-envelope"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-flickr"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-pinterest"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-google-plus"></i>
+            </a>
+            <a href="index.html#">
+                <i class="fa fa-github"></i>
+            </a>
+            <a href="{{@blog.url}}/rss">
+                <i class="fa fa-rss"></i>
+            </a>
+        </section>
 
     </div> <!-- end #inner-header -->
+
+    <!-- Cover Image -->
+    <div id="cover" 
+        {{#if post}}
+            style="background-image: url({{@blog.cover}});" class="cover-container post">
+        {{else}}
+            style="background-image: url({{@blog.cover}});" class="cover-container">
+        {{/if}}
+
+        <!-- Blog Description -->
+        <div class="vertical">
+            <h2 id="site-description">
+                {{!@blog.description}}{{meta_description}}
+            </h2>
+        </div>
+    </div>
+
+    <!-- Static Menu (Dynamic menu not yet available in Ghost 0.4) -->
+    {{> navigation}}
 
 </header> <!-- end header -->

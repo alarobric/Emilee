@@ -23,19 +23,19 @@
     <link rel="alternate" type="application/rss+xml" title="{{@blog.title}} » Feed" href="/rss">
 
     <!-- Add Modernizr for better IE8 Support -->
-    <script type="text/javascript" src="/js/libs/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="{{asset "js/libs/modernizr.custom.min.js"}}"></script>
 
     <!-- Include the fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Life+Savers|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Lustria:400|Lato:400,100italic,100,300italic,300,400italic,700italic,700,900italic,900" rel="stylesheet" type="text/css">
 
     <!-- Font Awesome -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <!-- Include the main stylesheet-->
-    <link rel="stylesheet" id="linen-stylesheet-css" href="/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" id="linen-stylesheet-css" href="{{asset "css/style.css"}}" type="text/css" media="all">
 
     <!--[if lt IE 9]>
-    <link rel='stylesheet' id='linen-ie-only-css'  href='/css/ie.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='linen-ie-only-css'  href='{{asset "css/ie.css"}}' type='text/css' media='all' />
     <![endif]-->
 
     {{! Ghost outputs important style and meta data with this tag }}
@@ -78,7 +78,7 @@
     {{ghost_foot}}
 
     <!-- Custom Scripts -->
-    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
     <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 

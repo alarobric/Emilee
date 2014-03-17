@@ -37,7 +37,7 @@ HEADER STYLES
 #logo {}
 
 #site-title {
-    font-size: 4rem;
+    //font-size: 4rem;
 }
 
 /*********************
@@ -45,7 +45,6 @@ NAVIGATION STYLES
 *********************/
 
 #site-navigation {
-	background: #eee;
 	border: 0;
 
 	li {
@@ -60,7 +59,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				background-color: #dedede;
+				background-color: $nav-hover-background;
 
 			}
 		}
