@@ -6,8 +6,6 @@ Emilee is created and maintained by *[Alan Richards](http://alarobric.com)*
 
 ## Installation
 
-(More detailed installation instructions coming soon, I promise)
-
 ### Prerequisites
 
 1. Node.js
@@ -20,9 +18,14 @@ Emilee is created and maintained by *[Alan Richards](http://alarobric.com)*
 
 Clone (or fork) this repository into your /content/themes/ folder in Ghost.
 
-Run `npm install` in the linen directory to install grunt modules.
+Run `npm install` in the linen directory to install grunt modules and bower
 
-Run `grunt` to build the Sass files, or `grunt watch` when you are ready to start themeing.
+Run `grunt` to pull the bower files, copy and build the Sass files
+Run `grunt watch` when you are ready to start themeing. Grunt will monitor the handlebars templates and sass files, and rebuild when necessary. Livereload is supported.
+
+Within the Ghost admin pages, change your theme to Emilee. Note: as of Ghost 0.4 you'll have to restart Node.js after installing the theme for Ghost to notice.
+
+Have fun!
 
 ## Thanks To:
 
@@ -30,4 +33,5 @@ Run `grunt` to build the Sass files, or `grunt watch` when you are ready to star
 * Themble & Eddie Machado for the Bones framework
 * HTML5 Boilerplate
 * Mono Social Icon Font
+* Font Awesome
 * Ghost and Casper
