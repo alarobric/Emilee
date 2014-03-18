@@ -1,4 +1,4 @@
-# Emilee - A Theme for Ghost
+# Emilee - A Theme for Ghost [![Build Status](https://travis-ci.org/alarobric/Emilee.png?branch=master)](https://travis-ci.org/alarobric/Emilee)
 
 Based on the helpful starter theme Linen - created and maintained by *[Theme Spectre](http://themespectre.com/linen)*
 
