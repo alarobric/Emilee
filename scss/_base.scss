@@ -400,7 +400,7 @@ PAGINATION (Thanks to the Ghost team for this)
     clear: both;
     position: relative;
     width: 100%;
-    margin: 4rem auto;
+    margin: 2rem auto;
     font-size: 1.3rem;
     text-align: center;
 
@@ -559,14 +559,15 @@ footer {
 /* page footer */
 .footer {
 	clear: both;
-    float: left;
     width: 100%;
     background: $footer-color;
     color: $footer-text-color;
-    margin: 2rem auto 0;
+    margin: 0 auto 0;
 
     #inner-footer {
-        padding: 3rem 0;
+        text-align: center;
+        padding: 2rem 0;
+        margin: 0 auto;
     }
 
     p {
