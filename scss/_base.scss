@@ -437,6 +437,10 @@ PAGINATION (Thanks to the Ghost team for this)
 SIDEBARS & ASIDES
 *********************/
 
+#sidebar-main {
+    display: none;
+}
+
 .sidebar {}
 
 .widgettitle {}
@@ -555,6 +559,8 @@ footer {
 /* page footer */
 .footer {
 	clear: both;
+    float: left;
+    width: 100%;
     background: $footer-color;
     color: $footer-text-color;
     margin: 2rem auto 0;
