@@ -13,7 +13,7 @@
 
         <!-- Title -->
         <h2 id="site-title">
-            <a href="/" rel="nofollow">{{!@blog.title}}{{meta_title}}</a>
+            <a href="/" rel="nofollow">{{@blog.title}}</a>
         </h2>
 
         <section class="social-media">
@@ -59,7 +59,11 @@
         <!-- Blog Description -->
         <div class="vertical">
             <h2 id="site-description">
-                {{!@blog.description}}{{meta_description}}
+                {{#if post}}
+                    {{meta_title}}
+                {{else}}
+                    {{!@blog.description}}{{meta_description}}
+                {{/if}}
             </h2>
         </div>
     </div>
