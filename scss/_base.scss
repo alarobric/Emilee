@@ -170,13 +170,14 @@ img.logo {
 
 #cover {
     width: 100%;
-    height: 250px;
+    min-height: 300px;
     overflow: hidden;
-    background-size: auto auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
 
+    //necessary to vertically align the text
     display: table;
     position: relative;
 
