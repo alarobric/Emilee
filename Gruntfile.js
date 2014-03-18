@@ -83,7 +83,22 @@ module.exports = function(grunt) {
                     'scss/_normalize.scss': 'normalize-css/normalize.css'
                 }
             }
+        },
+
+        csslint: {
+            strict: {
+                options: {
+                    import: 2
+                },
+                src: ['<%= paths.css %>/*.css']
+            },
+            lax: {
+                options: {
+                },
+                src: ['<%= paths.css %>/*.css']
+            }
         }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
@@ -92,6 +107,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-bowercopy');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
 
     grunt.registerTask('default', ['bowercopy:modernizr', 'sass:admin']);
     //grunt.registerTask('bundle', ['clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
