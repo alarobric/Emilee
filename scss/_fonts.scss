@@ -5,14 +5,16 @@ TYPOGRAPHY
 //$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 //$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 
-$font-default:      'Lato', Arial, Helvetica, sans-serif;
-$font-header:       'Lustria', Helvetica, Arial, sans-serif;
+//Lustria and Lato
+
+$font-header:       'Bitter', Helvetica, Arial, sans-serif;
+$font-default:      'Raleway', Arial, Helvetica, sans-serif;
 
 /*
  * MONO SOCIAL ICONS FONT
  * http://drinchev.github.io/monosocialiconsfont/
 */
-
+/*
 @font-face {
     font-family: 'Mono Social Icons Font';
     src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.eot');
@@ -44,4 +46,4 @@ a.symbol:before {
     content: '';
     //margin-right: 0.3em;
     //font-size: 130%;
-}
+}*/
