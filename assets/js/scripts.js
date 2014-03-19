@@ -1,3 +1,7 @@
+//number of columns in the index page gallery 
+//depending on the width of the page
+var gNumColumns = 1;
+
 function fitRows($container, numRows)
 {
     var $elements = $container.children('article');
@@ -18,7 +22,7 @@ function fitRows($container, numRows)
 }
 
 
-// as the page loads, call these scripts
+// as the DOM loads, call these scripts
 jQuery(document).ready(function($) {
 
     /*
@@ -28,14 +32,12 @@ jQuery(document).ready(function($) {
      that works for you best.
      */
 
-     var numColumns = 1;
-
     /* getting viewport width */
     var responsive_viewport = $(window).width();
 
     /* if is below 481px */
     if (responsive_viewport < 481) {
-        numColumns = 1;
+        gNumColumns = 1;
     } /* end smallest screen */
 
     /* if is larger than 481px */
@@ -45,7 +47,7 @@ jQuery(document).ready(function($) {
 
     /* if is larger than 660px */
     if (responsive_viewport > 660) {
-        numColumns = 2;
+        gNumColumns = 2;
     } /* end larger than 660px */    
 
     /* if is above or equal to 768px */
@@ -60,18 +62,13 @@ jQuery(document).ready(function($) {
 
     /* if is larger than 940px */
     if (responsive_viewport > 940) {
-        numColumns = 3;
+        gNumColumns = 3;
     } /* end larger than 940px */
 
     /* off the bat large screen actions */
     if (responsive_viewport > 1030) {
 
     }
-
-    fitRows($('#main > section'), numColumns);
-
-    // add all your scripts here
-
     
     //look for an image for the post
     mainImage = $('img[alt="main-image"]');
@@ -84,7 +81,16 @@ jQuery(document).ready(function($) {
     }
 
 
-}); /* end of as page load scripts */
+}); /* end of document.ready - as DOM loads */
+
+
+//as the page fully loads
+$(window).load(function() {
+    //Wait for everything to load (i.e. the images)
+    var $galleryContainer = $('#main > section');
+    fitRows($galleryContainer, gNumColumns);
+
+});
 
 
 /*! A fix for the iOS orientationchange zoom bug.
