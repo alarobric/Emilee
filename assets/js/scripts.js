@@ -1,30 +1,22 @@
-/*
- Bones Scripts File
- Author: Eddie Machado
+function fitRows($container, numRows)
+{
+    var $elements = $container.children('article');
+    var maxHeight = 0;
 
- This file should contain any js scripts you want to add to the site.
- Instead of calling it in the header this file will be called 
- automatically in the footer so as not to slow the page load.
+    $elements.each(function(i, element) {
+        var $element = $(element);
 
- */
-
-// IE8 ployfill for GetComputed Style (for Responsive Script below)
-if (!window.getComputedStyle) {
-    window.getComputedStyle = function(el, pseudo) {
-        this.el = el;
-        this.getPropertyValue = function(prop) {
-            var re = /(\-([a-z]){1})/g;
-            if (prop == 'float') prop = 'styleFloat';
-            if (re.test(prop)) {
-                prop = prop.replace(re, function () {
-                    return arguments[2].toUpperCase();
-                });
+        maxHeight = Math.max($element.height(), maxHeight);
+        if ((i+1) % numRows === 0) {
+            for (j=numRows; j; j--) {
+                $element.css('min-height', maxHeight);
+                $element = $element.prev();
             }
-            return el.currentStyle[prop] ? el.currentStyle[prop] : null;
+            maxHeight = 0;
         }
-        return this;
-    }
+    });
 }
+
 
 // as the page loads, call these scripts
 jQuery(document).ready(function($) {
@@ -36,18 +28,25 @@ jQuery(document).ready(function($) {
      that works for you best.
      */
 
+     var numColumns = 1;
+
     /* getting viewport width */
     var responsive_viewport = $(window).width();
 
     /* if is below 481px */
     if (responsive_viewport < 481) {
-
+        numColumns = 1;
     } /* end smallest screen */
 
     /* if is larger than 481px */
     if (responsive_viewport > 481) {
 
     } /* end larger than 481px */
+
+    /* if is larger than 660px */
+    if (responsive_viewport > 660) {
+        numColumns = 2;
+    } /* end larger than 660px */    
 
     /* if is above or equal to 768px */
     if (responsive_viewport >= 768) {
@@ -59,11 +58,17 @@ jQuery(document).ready(function($) {
 
     }
 
+    /* if is larger than 940px */
+    if (responsive_viewport > 940) {
+        numColumns = 3;
+    } /* end larger than 940px */
+
     /* off the bat large screen actions */
     if (responsive_viewport > 1030) {
 
     }
 
+    fitRows($('#main > section'), numColumns);
 
     // add all your scripts here
 
