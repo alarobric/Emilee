@@ -18,9 +18,11 @@ body {
     font-weight: 400;
 	font-size: 100%;
 	line-height: 1.5;
-    //background-color: $bg-color;
-    //background-image: url(../images/bodybg.jpg);
 	color: $font-color;
+
+    background-color: #F6F6F6;
+    background-image: url(../images/crossword.png);
+    background-repeat: repeat;
 }
 
 /*********************
@@ -117,7 +119,7 @@ HEADER STYLES
 
 .header {
     margin-top: 0px;
-    background-color: #FFF;
+    //background-color: #FFF;
 }
 
 #inner-header {
