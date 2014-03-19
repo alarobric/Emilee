@@ -109,6 +109,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-csslint');
 
+    //default task to get from bower, build Sass
     grunt.registerTask('default', ['bowercopy:modernizr', 'sass:admin']);
+
+    //also try 'grunt watch' to build sass and livereload page whenever files change
+    
+    //used by Travis-CI to build and test
+    grunt.registerTask('build', ['bowercopy', 'sass', 'copy:main']);
+    grunt.registerTask('test', ['sass']);
+
+
     //grunt.registerTask('bundle', ['clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
 };

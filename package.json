@@ -17,6 +17,6 @@
     "grunt-contrib-csslint": "~0.2.0"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt test"
   }
 }
