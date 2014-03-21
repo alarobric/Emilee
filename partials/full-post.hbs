@@ -26,14 +26,10 @@
             {{#if tags}}
                 & filed under
                 {{#each tags}}
-                    <!-- Tag Links are not quite ready yet.
-                           <a href="/tags/{{this.name}}"
-                           class="tag-label"
-                           title="View all posts in {{this.name}}"
-                           rel="category">{{this.name}}</a>
-                           -->
-                    {{! Use the span below to display tags as plain text until tag links are ready }}
-                    <span class="tag-label">{{this.name}}</span>
+                    <a href="{{url}}"
+                        class="tag-label"
+                        title="View all posts in {{name}}"
+                        rel="category">{{name}}</a>
                 {{/each}}
 
             {{/if}}
@@ -58,14 +54,10 @@
                 <span class="tags-title">
                     Tags:
                     {{#each tags}}
-                        <!-- Tag Links are not quite ready yet.
-                           <a href="/tags/{{this.name}}"
+                        <a href="{{url}}"
                            class="tag-label"
-                           title="View all posts in {{this.name}}"
-                           rel="category">{{this.name}}</a>
-                           -->
-                        {{! Use the span below to display tags as plain text until tag links are ready }}
-                        <span class="tag-label">{{this.name}}</span>
+                           title="View all posts in {{name}}"
+                           rel="category">{{name}}</a>
                     {{/each}}
                 </span>
             </p>

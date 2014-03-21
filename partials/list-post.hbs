@@ -22,14 +22,11 @@
 	            <i class="fa fa-tags"></i>
 
 	            {{#each tags}}
-	                <!-- Tag Links are not quite ready yet.
-	                       <a href="/tags/{{this.name}}"
-	                       class="tag-label"
-	                       title="View all posts in {{this.name}}"
-	                       rel="category">{{this.name}}</a>
-	                       -->
-	                {{! Use the span below to display tags as plain text until tag links are ready }}
-	                <span class="tag-label">{{this.name}}</span>
+	                <a href="{{url}}"
+	                    class="tag-label"
+	                    title="View all posts in {{name}}"
+	                    rel="category">{{name}}
+	                </a>
 	            {{/each}}
             </p>
 		</div>
