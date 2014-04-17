@@ -62,7 +62,11 @@
                 {{#if post}}
                     {{meta_title}}
                 {{else}}
-                    {{!@blog.description}}{{meta_description}}
+                    {{#if tag.name}}
+                        {{!tag.name}}
+                    {{else}}
+                        {{!@blog.description}}{{meta_description}}
+                    {{/if}}
                 {{/if}}
             </h2>
         </div>
